@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./yes_style.css">
+        
+    </head> 
+    <body>
+        <div class="container">
+            <div >
+                <h1 class = "header_text">YAYAYAYAYYAYAYAAYYA LETSSSSSSSSSSSSSSSSSS GOOOOOOOOOOOOOOOOOOOO!!</h1>
+            </div>
+            <div class="gif_container">
+                <img src="https://media0.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif" alt="Cute animated illustration"
+            </div>
+        </div>
+       
+    </body> 
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.audio-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 300px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="audio-player">
+ <audio id="audio-element">
+    <source src="https://pagallworld.co.in/wp-content/uploads/2023/09/Zindagi-Sawar-Du-Doraemon.mp3" type="audio/mpeg">
+    <source src="https://pagallworld.co.in/wp-content/uploads/2023/09/Zindagi-Sawar-Du-Doraemon.mp3" type="audio/ogg">
+    Your browser does not support the audio element.
+ </audio>
+ <button id="play-pause-btn">Play</button>
+ <ul id="playlist">
+    <li data-src="https://pagallworld.co.in/wp-content/uploads/2023/09/Zindagi-Sawar-Du-Doraemon.mp3">Song 1</li>
+    <li data-src="https://pagallworld.co.in/wp-content/uploads/2023/09/Zindagi-Sawar-Du-Doraemon.mp3">Song 2</li>
+    <li data-src="https://pagallworld.co.in/wp-content/uploads/2023/09/Zindagi-Sawar-Du-Doraemon.mp3">Song 3</li>
+ </ul>
+</div>
+
+<script>
+document.getElementById('play-pause-btn').addEventListener('click', function() {
+ var audio = document.getElementById('audio-element');
+  
+ if (audio.paused) {
+    audio.play();
+    this.textContent = 'Pause';
+ } else {
+    audio.pause();
+    this.textContent = 'Play';
+ }
+});
+
+var playlistItems = document.querySelectorAll('#playlist li');
+
+playlistItems.forEach(function(item) {
+ item.addEventListener('click', function() {
+    var audio = document.getElementById('audio-element');
+    audio.src = this.getAttribute('data-src');
+    audio.play();
+    document.getElementById('play-pause-btn').textContent = 'Pause';
+ });
+});
+</script>
+
+</body>
+</html>
